@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/dpadLin"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+<TableLayout android:id="@+id/TableLayout01" 
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+ >
+<TableRow>
+<Button android:text="Esc" android:layout_margin="1px" android:textSize="10dp" android:tag="kb_esc" android:id="@+id/kb_esc2" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+<View android:id="@+id/View01" android:layout_width="1px"  android:layout_height="1px"></View>
+<Button android:text="Up" android:textSize="10dp" android:layout_margin="1px" android:tag="kb_up" android:id="@+id/kb_up" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+<View android:id="@+id/View02" android:layout_width="1px"   android:layout_height="1px"></View>
+<Button android:text="Del" android:textSize="10dp" android:layout_margin="1px" android:tag="kb_del" android:id="@+id/kb_del2" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+</TableRow>
+<TableRow>
+<Button android:text="Ctrl" android:textSize="10dp" android:layout_margin="1px" android:tag="kb_ctrl" android:id="@+id/kb_ctrl2" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+<Button android:text="Left" android:textSize="10dp" android:layout_margin="1px"   android:tag="kb_left" android:id="@+id/kb_left" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+<Button android:text="Fire" android:textSize="10dp" android:layout_margin="1px"   android:tag="kb_enter" android:id="@+id/kb_enter" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+<Button android:text="Right" android:textSize="10dp" android:layout_margin="1px"  android:tag="kb_right" android:id="@+id/kb_right" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+<Button android:text="PgUp" android:textSize="10dp"  android:layout_margin="1px"  android:tag="kb_pgup" android:id="@+id/kb_pgup2" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+</TableRow>
+<TableRow>
+<Button android:text="Alt" android:textSize="10dp" android:layout_margin="1px"  android:tag="kb_alt" android:id="@+id/kb_alt2" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+<View android:id="@+id/View03" android:layout_width="1px"   android:layout_height="1px"></View>
+<Button android:text="Down" android:textSize="10dp"  android:layout_margin="1px"  android:tag="kb_down" android:id="@+id/kb_down" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+<View android:id="@+id/View04" android:layout_width="1px"  android:layout_height="1px"></View>
+<Button android:text="PgDw" android:textSize="10dp" android:layout_margin="1px"  android:tag="kb_pgdw" android:id="@+id/kb_pgdw2" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+</TableRow>
+<TableRow>
+<Button android:text="Space" android:textSize="10dp" android:layout_margin="1px" android:tag="kb_space" android:layout_span="3" android:id="@+id/kb_space2" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+<Button android:text="LMB" android:textSize="10dp" android:layout_margin="1px" android:tag="kb_lmb" android:layout_span="2" android:id="@+id/kb_lmb" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+</TableRow>
+
+</TableLayout>
+</LinearLayout>
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/display_options" android:title="Mac Screen Options">
+          <menu>
+          <item android:id="@+id/options_screen" android:title="Mac Screen Size" />
+          <item android:id="@+id/options_dosfiltering" android:title="Display Crispness" />                              
+          <item android:id="@+id/options_aspect" android:title="Keep Screen Aspect" />                              
+          <item android:id="@+id/options_shrink" android:title="Screen Scaling" />
+          </menu>
+          </item>
+    <item android:id="@+id/menu_options" android:title="Mac HW Options">
+          <menu>
+          <item android:id="@+id/options_ram" android:title="RAM Size" />	      
+          <item android:id="@+id/options_cpu" android:title="CPU Type" />          
+          <item android:id="@+id/options_model" android:title="Mac Model" />
+          <item android:id="@+id/options_frameskip" android:title="Frameskip" />
+          <item android:id="@+id/options_disk" android:title="External disks" />
+          </menu>
+          </item>
+   <item android:id="@+id/menu_guioptions" android:title="GUI Options">
+          <menu>
+          <item android:id="@+id/options_orientation" android:title="Application Orientation" />          
+          <item android:id="@+id/options_buttonsize" android:title="Buttons Size" />
+          </menu>
+          </item>                    
+    <item android:id="@+id/menu_about" android:title="About" />
+    <item android:id="@+id/menu_quit" android:title="Exit" />
+</menu>

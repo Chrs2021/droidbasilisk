@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lin01"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/dosPanel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <TableLayout
+        android:id="@+id/MainPortrait01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#435169" >
+
+        <TableRow>
+
+            <HorizontalScrollView
+                android:id="@+id/mainhorizontalScrollView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/butPanel1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:id="@+id/goQwerty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/switch_button"
+                        android:tag="goQwerty"
+                        android:text="ABC"
+                        android:textSize="14dp" >
+                    </Button>
+
+                    <Button
+                        android:id="@+id/goShift"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/switch_button"
+                        android:tag="goShift"
+                        android:text=".,!?"
+                        android:textSize="14dp" >
+                    </Button>
+
+                    <Button
+                        android:id="@+id/goTpad"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/switch_button"
+                        android:tag="goTpad"
+                        android:text="TPad"
+                        android:textSize="14dp" >
+                    </Button>
+
+                    <Button
+                        android:id="@+id/goDpad"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/switch_button"
+                        android:tag="goDpad"
+                        android:text="DPad"
+                        android:textSize="14dp" >
+                    </Button>
+
+                    <Button
+                        android:id="@+id/marker_fm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1px"
+                        android:background="@drawable/switch_button"
+                        android:tag="marker_fm"
+                        android:text="FM"
+                        android:textSize="14dp" >
+                    </Button>
+
+                    <Button
+                        android:id="@+id/kb_mplus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1px"
+                        android:background="@drawable/switch_button"
+                        android:tag="kb_mplus"
+                        android:text="MOU+"
+                        android:textColor="#000000"
+                        android:textSize="14dp" >
+                    </Button>
+
+                    <Button
+                        android:id="@+id/kb_mminus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1px"
+                        android:background="@drawable/switch_button"
+                        android:tag="kb_mminus"
+                        android:text="MOU-"
+                        android:textColor="#000000"
+                        android:textSize="14dp" >
+                    </Button>
+
+                    <Button
+                        android:id="@+id/kb_splus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1px"
+                        android:background="@drawable/switch_button"
+                        android:tag="kb_splus"
+                        android:text="KEY+"
+                        android:textColor="#000000"
+                        android:textSize="14dp" >
+                    </Button>
+
+                    <Button
+                        android:id="@+id/kb_sminus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1px"
+                        android:background="@drawable/switch_button"
+                        android:tag="kb_sminus"
+                        android:text="KEY-"
+                        android:textColor="#000000"
+                        android:textSize="14dp" >
+                    </Button>
+
+                    <Button
+                        android:id="@+id/kb_lmbmain"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1px"
+                        android:background="@drawable/switch_button"
+                        android:tag="kb_sminus"
+                        android:text="xyz"
+                        android:textColor="#000000"
+                        android:textSize="14dp" >
+                    </Button>
+                </LinearLayout>
+            </HorizontalScrollView>
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:id="@+id/linchild"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+</LinearLayout>

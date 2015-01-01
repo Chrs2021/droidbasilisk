@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tpadLin"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+<TableLayout android:id="@+id/TableLayout01" 
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+ >
+ 
+<TableRow>
+    <SurfaceView  
+    android:id="@+id/SurfaceView04"
+    android:text="MousePad"
+    android:background="#777777"
+    android:layout_width="210px" 
+    android:layout_height="180px"         
+    />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lin04"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <Button android:text="LMB" android:textSize="16dp" android:tag="kb_lmb" android:id="@+id/kb_lmb" android:background="@drawable/switch_button" android:layout_width="100px" android:layout_height="75px" android:layout_margin="5px"></Button>
+	<Button android:text="RMB" android:textSize="16dp" android:tag="kb_rmb" android:id="@+id/kb_rmb" android:background="@drawable/switch_button" android:layout_width="100px" android:layout_height="75px" android:layout_margin="5px"></Button>    
+</LinearLayout>
+</TableRow>
+</TableLayout>
+    
+</LinearLayout>

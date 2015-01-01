@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources>
+    <string name="app_name">DroidMac</string>
+    <string name="droidmac_about">This is BasiliskII port for Android by tomaswoj, works in progress. WIP02_b30092011.\nUses SDL by pelya. Kudos go to Basilisk team, E-Maculation, MyApple.pl, MacintoshGarden and last but definitely not least - Darek Mihocka.\nSee http://droidmac.blogspot.com\nContact me at: tomaswoj@gmail.com\n</string>
+</resources>

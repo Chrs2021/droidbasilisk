@@ -1,0 +1,8 @@
+/codegen_x86.cpp////*////
+/codegen_x86.h////*////
+/compemu.h////*////
+/compemu_fpp.cpp////*////
+/compemu_support.cpp////*////
+/flags_x86.h////*////
+/gencomp.c////*////
+/test_codegen_x86.cpp////*////

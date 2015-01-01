@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lin01"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TableLayout
+        android:id="@+id/TableLayout01"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <TableRow>
+
+            <LinearLayout
+                android:id="@+id/dosPanel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+            </LinearLayout>
+
+            <TableLayout
+                android:id="@+id/TableLayout01"
+                android:layout_width="214px"
+                android:layout_height="wrap_content"
+                android:background="#aaaaaa" >
+
+                <TableRow>
+
+                    <LinearLayout
+                        android:id="@+id/linchild"
+                        android:layout_width="214px"
+                        android:layout_height="350px"
+                        android:background="#cccccc"
+                        android:orientation="vertical" >
+    >
+                        <!-- android:layout_height="340px" -->
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow>
+
+                    <HorizontalScrollView
+                        android:id="@+id/mainhorizontalScrollView1"
+                        android:layout_width="214px"
+                        android:layout_height="wrap_content" >
+
+                        <LinearLayout
+                            xmlns:android="http://schemas.android.com/apk/res/android"
+                            android:id="@+id/butPanel1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" >
+
+                            <Button
+                                android:id="@+id/goQwerty"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1px"
+                                android:background="@drawable/switch_button"
+                                android:tag="goQwerty"
+                                android:text="ABC..."
+                                android:textColor="#000000"
+                                android:textSize="16dp" >
+                            </Button>
+
+                            <Button
+                                android:id="@+id/goDpad"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1px"
+                                android:background="@drawable/switch_button"
+                                android:tag="goDpad"
+                                android:text="DPAD"
+                                android:textColor="#000000"
+                                android:textSize="16dp" >
+                            </Button>
+
+                            <Button
+                                android:id="@+id/goShift"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1px"
+                                android:background="@drawable/switch_button"
+                                android:tag="goShift"
+                                android:text=". , ! ?"
+                                android:textColor="#000000"
+                                android:textSize="16dp" >
+                            </Button>
+
+                            <Button
+                                android:id="@+id/kb_mplus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1px"
+                                android:background="@drawable/switch_button"
+                                android:tag="kb_mplus"
+                                android:text="MOU+"
+                                android:textColor="#000000"
+                                android:textSize="16dp" >
+                            </Button>
+
+                            <Button
+                                android:id="@+id/kb_mminus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1px"
+                                android:background="@drawable/switch_button"
+                                android:tag="kb_mminus"
+                                android:text="MOU-"
+                                android:textColor="#000000"
+                                android:textSize="16dp" >
+                            </Button>
+
+                            <Button
+                                android:id="@+id/kb_splus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1px"
+                                android:background="@drawable/switch_button"
+                                android:tag="kb_splus"
+                                android:text="KEY+"
+                                android:textColor="#000000"
+                                android:textSize="16dp" >
+                            </Button>
+
+                            <Button
+                                android:id="@+id/kb_sminus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1px"
+                                android:background="@drawable/switch_button"
+                                android:tag="kb_sminus"
+                                android:text="KEY-"
+                                android:textColor="#000000"
+                                android:textSize="16dp" >
+                            </Button>
+                        </LinearLayout>
+                    </HorizontalScrollView>
+                </TableRow>
+
+                <TableRow>
+
+                    <LinearLayout
+                        android:id="@+id/staticButtons"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <Button
+                            android:id="@+id/kb_shift"
+                            android:layout_width="110px"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/switch_button"
+                            android:tag="kb_shift"
+                            android:text="Shift"
+                            android:textSize="16dp" />
+
+                        <Button
+                            android:id="@+id/kb_cmd"
+                            android:layout_width="110px"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="2px"
+                            android:background="@drawable/switch_button"
+                            android:tag="kb_cmd"
+                            android:text="Cmd"
+                            android:textSize="16dp" >
+                        </Button>
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow>
+
+                    <LinearLayout
+                        android:id="@+id/staticButtons2"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <Button
+                            android:id="@+id/kb_entermain"
+                            android:layout_width="110px"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/switch_button"
+                            android:tag="kb_enter"
+                            android:text="Enter"
+                            android:textSize="16dp" />
+                    </LinearLayout>
+                </TableRow>
+            </TableLayout>
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lin01"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" android:background="#122d4a">
+    <LinearLayout 
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:layout_width="fill_parent" android:id="@+id/linearLayout1" android:layout_height="wrap_content" android:background="@drawable/top_gradient">
+    <ImageView android:layout_width="wrap_content" android:id="@+id/imageView1" android:layout_height="wrap_content" android:src="@drawable/icon" android:layout_margin="2px"></ImageView>
+    <LinearLayout 
+    android:padding="5dp"
+    android:orientation="vertical"
+    android:layout_width="fill_parent" android:id="@+id/linearLayout2" android:layout_height="wrap_content">
+    <TextView 
+    android:text="DroidMac"
+    android:textSize="24dp" 
+    android:id="@+id/textView1" 
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content" android:textColor="#ffffff">    
+    </TextView>    
+    <TextView 
+    android:text="Because Droids love Apples"
+    android:textSize="16dp" 
+    android:id="@+id/textView1" 
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content" android:textColor="#ffffff" android:paddingLeft="2px">    
+    </TextView>    
+    </LinearLayout>    
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:id="@+id/linearLayout4" android:layout_height="wrap_content" android:background="#2e76bf">
+    <Button android:text="Save" android:id="@+id/button2" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+    <Button android:text="Start" android:id="@+id/button1" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+    <Button android:text="About" android:id="@+id/button3" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+	</LinearLayout>
+    
+    <ScrollView android:layout_width="fill_parent" android:id="@+id/scrollView1" android:layout_height="wrap_content">
+    <TableLayout android:layout_width="fill_parent" android:id="@+id/tableLayout1" android:layout_height="wrap_content">
+	<TableRow android:layout_width="fill_parent" android:background="#223d5a">	
+	<TextView android:text=""></TextView>
+	<TextView android:text="GUI Configuration:"></TextView>
+	<TextView android:text=""></TextView>	
+	</TableRow>
+	<TableRow android:layout_width="fill_parent">
+	<Button android:id="@+id/buttonx" android:text="Prev"></Button>
+	<TextView android:text="App Orientation:"></TextView>
+	<Button android:id="@+id/buttonx" android:text="Next"></Button>
+	</TableRow>
+	<TableRow android:layout_width="fill_parent">
+	<Button android:id="@+id/buttonx" android:text="Prev"></Button>
+	<TextView android:text="Buttons Size:"></TextView>
+	<Button android:id="@+id/buttonx" android:text="Next"></Button>
+	</TableRow>
+	<TableRow android:layout_width="fill_parent" android:background="#223d5a">	
+	<TextView android:text=""></TextView>
+	<TextView android:text="Mac Configuration:"></TextView>
+	<TextView android:text=""></TextView>	
+	</TableRow>
+	<TableRow android:layout_width="fill_parent">
+	<Button android:id="@+id/buttonx" android:text="Prev"></Button>
+	<TextView android:text="Mac Model:"></TextView>
+	<Button android:id="@+id/buttonx" android:text="Next"></Button>
+	</TableRow>
+	<TableRow android:layout_width="fill_parent">
+	<Button android:id="@+id/buttonx" android:text="Prev"></Button>
+	<TextView android:text="Mac ROM:"></TextView>
+	<Button android:id="@+id/buttonx" android:text="Next"></Button>
+	</TableRow>
+	<TableRow android:layout_width="fill_parent">
+	<Button android:id="@+id/buttonx" android:text="Prev"></Button>
+	<TextView android:text="Mac RAM:"></TextView>
+	<Button android:id="@+id/buttonx" android:text="Next"></Button>
+	</TableRow>
+	<TableRow android:layout_width="fill_parent">
+	<Button android:id="@+id/buttonx" android:text="Prev"></Button>
+	<TextView android:text="Mac CPU:"></TextView>
+	<Button android:id="@+id/buttonx" android:text="Next"></Button>
+	</TableRow>
+	<TableRow android:layout_width="fill_parent">
+	<Button android:id="@+id/buttonx" android:text="Prev"></Button>
+	<TextView android:text="HDD image1:"></TextView>
+	<Button android:id="@+id/buttonx" android:text="Next"></Button>
+	</TableRow>	
+	<TableRow android:layout_width="fill_parent">
+	<Button android:id="@+id/buttonx" android:text="Prev"></Button>
+	<TextView android:text="HDD image2:"></TextView>
+	<Button android:id="@+id/buttonx" android:text="Next"></Button>
+	</TableRow>	
+	<TableRow android:layout_width="fill_parent">
+	<Button android:id="@+id/buttonx" android:text="Prev"></Button>
+	<TextView android:text="Mount SDCard:"></TextView>
+	<Button android:id="@+id/buttonx" android:text="Next"></Button>
+	</TableRow>			
+    </TableLayout>
+    </ScrollView>
+        </LinearLayout>
