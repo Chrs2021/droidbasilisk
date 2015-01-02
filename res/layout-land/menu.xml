@@ -5,7 +5,6 @@
           <item android:id="@+id/options_screen" android:title="Mac Screen Size" />
           <item android:id="@+id/options_dosfiltering" android:title="Display Crispness" />                              
           <item android:id="@+id/options_aspect" android:title="Keep Screen Aspect" />                              
-          <item android:id="@+id/options_shrink" android:title="Screen Scaling" />
           </menu>
           </item>
     <item android:id="@+id/menu_options" android:title="Mac HW Options">

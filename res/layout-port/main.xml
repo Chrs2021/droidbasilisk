@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/lin01"
-    android:layout_width="wrap_content"
+    android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
@@ -26,7 +26,6 @@
                 android:layout_height="wrap_content" >
 
                 <LinearLayout
-                    xmlns:android="http://schemas.android.com/apk/res/android"
                     android:id="@+id/butPanel1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -127,18 +126,6 @@
                         android:background="@drawable/switch_button"
                         android:tag="kb_sminus"
                         android:text="KEY-"
-                        android:textColor="#000000"
-                        android:textSize="14dp" >
-                    </Button>
-
-                    <Button
-                        android:id="@+id/kb_lmbmain"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="1px"
-                        android:background="@drawable/switch_button"
-                        android:tag="kb_sminus"
-                        android:text="xyz"
                         android:textColor="#000000"
                         android:textSize="14dp" >
                     </Button>

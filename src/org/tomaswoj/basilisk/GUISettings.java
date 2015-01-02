@@ -8,11 +8,10 @@ public class GUISettings {
 	private static int dosWindowX=320;
 	private static int dosWindowY=240;
 	private static int dosFiltering=0; // 0 - GL_NEAREST, 1 - GL_LINEAR
-	private static int dosAspect=0; // 0 - no keep, 1 - keep aspect
+	private static int dosAspect=1; // 0 - no keep, 1 - keep aspect
 	private static int qwertyLayout=0; // 0 - 11x6, 1 - 10x7
 	private static int buttonSize=14;
 	private static int orientation=0; //0 - portrait, 1 - landscape
-	private static int oversizeMode=0; //0 - paged, 1 - shrinked
 	
 	//tpad size 
 	private static int tpadX = 210;
@@ -47,14 +46,6 @@ public class GUISettings {
 		}
 	}
 	
-	public static void setOversizeMode(int nmode) {
-		oversizeMode = nmode;
-	}
-	
-	public static int getOversizeMode() {
-		return oversizeMode;
-	}
-
 	public static void setTpadSize(int tpadSize) {
 		switch (tpadSize) {
 		case 0: //HVGA - 320x240

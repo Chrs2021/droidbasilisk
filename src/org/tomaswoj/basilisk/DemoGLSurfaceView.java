@@ -165,52 +165,15 @@ class DemoGLSurfaceView extends GLSurfaceView {
 		if (event.getAction() == MotionEvent.ACTION_DOWN)
 		{
 			action = 0;
-			if (!mouseLock) {
-				//do panning (depending on position)
-				if (eventx <= ratioPL * dosWinX) lr = 1;
-				if (eventx >= ratioPH * dosWinX) lr = 2;
-				if (eventy <= ratioPL * dosWinY) ud = 1;
-				if (eventy >= ratioPH * dosWinY) ud = 2;
-				panVirtualWindow(lr, ud);
-				Log.v("droiddos", "panned");
-			}
-			//or lock/unlock mouse
 			
-			if (eventx >ratioCL * dosWinX && eventx <ratioCH*dosWinX && eventy > ratioCL * dosWinY && eventy < ratioCH * dosWinY) {				
-
-				
-				if (BasiliskMain.orientationSel==0) {
-					if (mouseLock)
-					{
-						mouseLock = false;
-						dosFollowMouse(0);
-						BasiliskMain.switchFM(0);
-						Log.v("droiddos", "follow mouse set to false");
-					}
-					else
-					{
-						mouseLock = true;
-						dosFollowMouse(1);
-						BasiliskMain.switchFM(1);
-						Log.v("droiddos", "follow mouse set to true");
-					}
-				} 
-				else
-				{
-					//horizontal mode
-					//handle tap
-					//if (!BasiliskMain.lmbLock) {
-
-					//}
-					
-					//landscape mode, simulat mouse movement
-					Log.v("myTag", "---------dos screen down-----------");
-					startX=event.getX();
-					startY=event.getY();
-					lastX=startX;
-					lastY=startY;
-					startedMove=true;
-				}
+			if (eventx >ratioCL * dosWinX && eventx <ratioCH*dosWinX && eventy > ratioCL * dosWinY && eventy < ratioCH * dosWinY) {								
+				//landscape mode, simulat mouse movement
+				Log.v("myTag", "---------dos screen down-----------");
+				startX=event.getX();
+				startY=event.getY();
+				lastX=startX;
+				lastY=startY;
+				startedMove=true;
 			}
 		}
 		if (event.getAction()==MotionEvent.ACTION_UP) {
@@ -230,7 +193,7 @@ class DemoGLSurfaceView extends GLSurfaceView {
 			lastX=event.getX();
 			lastY=event.getY();
 			nativeMouse((int)(DosPanelListener.getMouseSense()*dX), (int)(DosPanelListener.getMouseSense()*dY), 2,2);
-			//Log.v("myTag", "dos screen tpad delta:"+dX+","+dY);
+			Log.v("myTag", "dos screen tpad delta:"+dX+","+dY);
 		}
 		
 		return true;

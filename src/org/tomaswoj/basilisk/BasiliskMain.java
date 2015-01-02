@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import org.tomaswoj.basilisk.R;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -42,7 +43,6 @@ public class BasiliskMain extends Activity implements OnClickListener, OnLongCli
 	static final int DIALOG_MEMSIZE = 0;
 	static final int DIALOG_SCREEN = 1;
 	static final int DIALOG_CPU = 2;
-	static final int DIALOG_OVERSIZE=16;
 	static final int DIALOG_FRAMESKIP=17;
 	static final int DIALOG_MODEL=18;
 	static final int DIALOG_XMS=19;
@@ -89,7 +89,6 @@ public class BasiliskMain extends Activity implements OnClickListener, OnLongCli
 	
 	static int ramSizeSel = 0;
 	static int modelSel = 0;
-	static int oversizeSel = 0;
 	static int cpuTypeSel = 0;
 	static int frameskipSel = 0;
 	static int dpadSizeSel = 0;
@@ -225,7 +224,6 @@ public class BasiliskMain extends Activity implements OnClickListener, OnLongCli
 	    tpadSizeSel = prefs.getInt("tpadSizeSel", 0);
 	    shiftSizeSel = prefs.getInt("shiftSizeSel", 14);
 	    orientationSel = prefs.getInt("orientationSel", 0);
-	    oversizeSel = prefs.getInt("oversizeSel",0);
 	    aspectSel = prefs.getInt("aspectSel", 0);	   
 	    settings.setDpadSize(dpadSizeSel);
 	    settings.setQwertySize(qwertySizeSel);
@@ -236,7 +234,6 @@ public class BasiliskMain extends Activity implements OnClickListener, OnLongCli
 	    settings.setTpadSize(tpadSizeSel);
 	    settings.setShiftSize(shiftSizeSel);
 	    settings.setOrientation(orientationSel);
-	    settings.setOversizeMode(oversizeSel);
 	
 	    //intercept phone calls
 	    tm = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
@@ -287,7 +284,7 @@ public class BasiliskMain extends Activity implements OnClickListener, OnLongCli
 		
 		LayoutParams dosWindowParams = new LayoutParams(settings.getDosWindowX(), settings.getDosWindowY());
 		mGLView.setLayoutParams(dosWindowParams);
-		mGLView.dosOversizeMode(GUISettings.getOversizeMode());
+		mGLView.dosOversizeMode(1); 
 		setContentView(R.layout.main);
 
 		if (settings.getOrientation()==0) {
@@ -305,7 +302,6 @@ public class BasiliskMain extends Activity implements OnClickListener, OnLongCli
 		kbplus.setTextSize(settings.getButtonSize());
 		kbminus = (Button) findViewById(R.id.kb_sminus);
 		kbminus.setTextSize(settings.getButtonSize());
-		
 		
 		//these buttons are not present in portrait view
 		if (settings.getOrientation()!=0) {
@@ -1024,6 +1020,7 @@ public class BasiliskMain extends Activity implements OnClickListener, OnLongCli
 	} */
 
 //	@Override
+	@SuppressLint("Override")
 	public void onBackPressed() {
 		showDialog(DIALOG_EXIT);
 	}
@@ -1137,29 +1134,6 @@ public class BasiliskMain extends Activity implements OnClickListener, OnLongCli
         	});
         	dialog= builder.create();        	
             break;
-
-        case DIALOG_OVERSIZE:
-            // do the work to define the pause Dialog
-        	final CharSequence[] itemsOversize = {"Paged", "Shrinked"};
-        	oversizeSel = GUISettings.getOversizeMode();
-        	        	builder.setTitle("Set Mac display oversize mode:");
-        	builder.setSingleChoiceItems(itemsOversize, oversizeSel, new DialogInterface.OnClickListener() {
-        	    public void onClick(DialogInterface dialog, int item) {
-        	        //
-        	    	oversizeSel = item;
-        	    	GUISettings.setOversizeMode(oversizeSel);
-        	    	mGLView.dosOversizeMode(GUISettings.getOversizeMode());
-        	    	SharedPreferences settings = getSharedPreferences(APP_PREFS, 0);
-        	        SharedPreferences.Editor editor = settings.edit();
-        	        editor.putInt("oversizeSel", oversizeSel);
-
-        	        // Commit the edits!
-        	        editor.commit();
-        	    	dialog.dismiss();        	    }
-        	});
-        	dialog= builder.create();        	
-            break;
-
             
         case DIALOG_DPADSIZE:
         	final CharSequence[] itemsSizeDpad = {"Small", "Medium", "Large", "Very Large"};
@@ -1447,9 +1421,6 @@ public class BasiliskMain extends Activity implements OnClickListener, OnLongCli
             return true;
         case R.id.options_frameskip:
             showDialog(DIALOG_FRAMESKIP);
-            return true;
-        case R.id.options_shrink:
-            showDialog(DIALOG_OVERSIZE);
             return true;
         case R.id.options_screen:
             showDialog(DIALOG_SCREEN);
