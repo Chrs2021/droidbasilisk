@@ -37,7 +37,7 @@ class DemoGLSurfaceView extends GLSurfaceView {
 		dosWinX = sizex;
 		dosWinY = sizey;
 		dosFiltering = filtering;
-		Log.v("droiddos", "SEtting renderer filtering:"+dosFiltering);
+		Log.v("droiddos", "Setting renderer :"+dosWinX+" "+dosWinY+" "+dosFiltering);
 		mRenderer.initRenderer(dosWinX, dosWinY, dosFiltering);
 		setRenderer(mRenderer);
 	}

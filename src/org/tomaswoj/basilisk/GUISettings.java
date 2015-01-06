@@ -7,7 +7,7 @@ public class GUISettings {
 	private static int dpadSize=22;
 	private static int dosWindowX=320;
 	private static int dosWindowY=240;
-	private static int dosFiltering=0; // 0 - GL_NEAREST, 1 - GL_LINEAR
+	private static int dosFiltering=1; // 0 - GL_NEAREST, 1 - GL_LINEAR
 	private static int dosAspect=1; // 0 - no keep, 1 - keep aspect
 	private static int qwertyLayout=0; // 0 - 11x6, 1 - 10x7
 	private static int buttonSize=14;
@@ -16,7 +16,11 @@ public class GUISettings {
 	//tpad size 
 	private static int tpadX = 210;
 	private static int tpadY = 180;
-	
+
+	public static void setDosWindowSize(int width, int height) {
+		dosWindowX = width;
+		dosWindowY = height;
+	}
 
 	public static void setDosWindowSize(int dosSize) {
 		switch (dosSize) {

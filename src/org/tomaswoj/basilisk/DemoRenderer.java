@@ -4,6 +4,7 @@ import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
 import android.opengl.GLSurfaceView;
+import android.util.Log;
 
 class DemoRenderer implements GLSurfaceView.Renderer {
 
@@ -18,7 +19,9 @@ class DemoRenderer implements GLSurfaceView.Renderer {
 		
 	}
 	public void onSurfaceCreated(GL10 gl, EGLConfig config) {
+		Log.v("basilisk", "nativeInit "+dosWindowX+" "+dosWindowY);
 		nativeInit(dosWindowX, dosWindowY, dosFiltering);
+		nativeAspect(0);
 	}
 
 	public void onSurfaceChanged(GL10 gl, int w, int h) {

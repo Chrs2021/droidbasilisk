@@ -22,12 +22,14 @@ import android.os.SystemClock;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.View.OnClickListener;
@@ -80,6 +82,7 @@ public class BasiliskMain extends Activity implements OnClickListener, OnLongCli
 	
 	public static final String ApplicationName = "basilisk";
 	public static final String APP_PREFS = "BasiliskPrefs";
+	protected static final float MIN_FILL = 0.8f; // try to fill at least 80% of screen area
 	private DemoGLSurfaceView mGLView;
 	private PowerManager.WakeLock wakeLock;
 	
@@ -228,7 +231,7 @@ public class BasiliskMain extends Activity implements OnClickListener, OnLongCli
 	    settings.setDpadSize(dpadSizeSel);
 	    settings.setQwertySize(qwertySizeSel);
 	    settings.setQwertyLayout(qwertyLayoutSel);
-	    settings.setDosWindowSize(dosSizeSel);
+//	    settings.setDosWindowSize(dosSizeSel);
 	    settings.setDosFiltering(dosFilteringSel);
 	    settings.setButtonSize(buttonSizeSel);
 	    settings.setTpadSize(tpadSizeSel);
@@ -277,14 +280,8 @@ public class BasiliskMain extends Activity implements OnClickListener, OnLongCli
 		//getWindow().addFlags(W)
 		
 
-		mGLView = new DemoGLSurfaceView(this, settings.getDosWindowX(), settings.getDosWindowY(), settings.getDosFiltering());
-		
-
 		settings = new GUISettings();
 		
-		LayoutParams dosWindowParams = new LayoutParams(settings.getDosWindowX(), settings.getDosWindowY());
-		mGLView.setLayoutParams(dosWindowParams);
-		mGLView.dosOversizeMode(1); 
 		setContentView(R.layout.main);
 
 		if (settings.getOrientation()==0) {
@@ -381,19 +378,82 @@ public class BasiliskMain extends Activity implements OnClickListener, OnLongCli
             }
          }
         
-		LinearLayout dosPanel = (LinearLayout) findViewById(R.id.dosPanel);
-		LayoutParams dosPanelParams = new LayoutParams(settings.getDosWindowX(), settings.getDosWindowY());
+		final LinearLayout dosPanel = (LinearLayout) findViewById(R.id.dosPanel);
+		dosPanel.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+			
+			@Override
+			public void onGlobalLayout() {
+				if (mGLView == null) {
+					Log.v("Basilisk", "global layout "+dosPanel.getWidth()+" "+dosPanel.getHeight());
+
+					int macWidth;
+					int macHeight;
+					
+					if (MacSettings.getScreen() == 1) {
+						macWidth = 640;
+						macHeight = 480;
+					}
+					else {
+						macWidth = 512;
+						macHeight = 384;
+					}
+					
+					int availWidth = dosPanel.getWidth();
+					int availHeight = dosPanel.getHeight();
+					
+					int viewWidth = 0;
+					int viewHeight = 0;
+					
+					if (macWidth <= availWidth && macHeight <= availHeight) {
+						int factor = 1;
+						while(macWidth * factor <= availWidth && macHeight * factor <= availHeight) {
+							if (macWidth * factor >= MIN_FILL * availWidth || macHeight * factor >= MIN_FILL * availHeight) {
+								Log.v("basilisk", "size adjust "+(macWidth * factor) + " "+ (MIN_FILL * viewWidth));
+								viewWidth = macWidth * factor;
+								viewHeight = macHeight * factor;
+								break;
+							}
+							factor++;
+						}
+					}
+					if (viewHeight == 0) {
+						if (availWidth * macHeight / macWidth <= availHeight) {
+							viewWidth = availWidth;
+							viewHeight = availWidth * macHeight / macWidth;
+						}
+						else {
+							viewHeight = availHeight;
+							viewWidth = availHeight * macWidth / macHeight;
+						}
+					}
+					
+					settings.setDosWindowSize(viewWidth, viewHeight);
+
+					mGLView = new DemoGLSurfaceView(BasiliskMain.this, viewWidth, viewHeight, settings.getDosFiltering());//settings.getDosWindowX(), settings.getDosWindowY(), settings.getDosFiltering());
+					LayoutParams dosWindowParams = new LayoutParams(viewWidth, viewHeight);
+					mGLView.setLayoutParams(dosWindowParams);
+					mGLView.dosOversizeMode(1); 
+					LayoutParams lp = dosPanel.getLayoutParams();
+					lp.width = viewWidth;
+					lp.height = viewHeight;
+					dosPanel.setLayoutParams(lp);
+	
+					dosPanel.removeAllViews();
+					dosPanel.addView(mGLView);
+					myUpdateTask.setDosView(mGLView);
+					myUpdateTask.setHandler(mHandler);
+				}
+			}
+		});
+//		LayoutParams dosPanelParams = new LayoutParams(settings.getDosWindowX(), settings.getDosWindowY());
 		//dosPanel.setLayoutParams(dosPanelParams);
-		dosPanel.addView(mGLView);
+//		dosPanel.addView(mGLView);
 		// Receive keyboard events
 		//mGLView.setFocusableInTouchMode(true);
 		//mGLView.setFocusable(true);
 		//mGLView.setOnTouchListener(this);
 		//mGLView.requestFocus();
 		
-		myUpdateTask.setDosView(this.mGLView);
-		myUpdateTask.setHandler(this.mHandler);
-
 		PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
 		wakeLock = pm.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK,
 				ApplicationName);

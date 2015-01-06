@@ -657,8 +657,10 @@ JAVA_EXPORT_NAME(DemoRenderer_nativeRender) ( JNIEnv*  env, jobject  thiz )
             ALOG_DEBUG("openglInitialized == GL_State_Init: memx:%d; memy:%d", memX, memY);
 			openglInitialized = GL_State_Ready;
 
-			textX = 1024; // handle up to 640
-			textY = 512; // handle up to 480;
+			//textX = 1024; // handle up to 640
+			//textY = 512; // handle up to 480;
+			textX = winX;
+			textY = winY;
 
             ALOG_DEBUG("view port: %d x %d", textX, textY);
             ALOG_DEBUG("openglInit: glViewPort");

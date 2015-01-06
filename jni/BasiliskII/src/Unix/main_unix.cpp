@@ -644,12 +644,13 @@ int main(int argc, char **argv)
 	// Load Mac ROM
         ALOG_DEBUG (rom_path ? rom_path : ROM_FILE_NAME);
 
-
 	int rom_fd = open(rom_path ? rom_path : ROM_FILE_NAME, O_RDONLY);
 	if (rom_fd < 0) {
+                ALOG_DEBUG ("Cannot load ROM");
 		ErrorAlert(STR_NO_ROM_FILE_ERR);
 		QuitEmulator();
 	}
+        ALOG_DEBUG ("Opened ROM");
 	printf(GetString(STR_READING_ROM_FILE));
 	ROMSize = lseek(rom_fd, 0, SEEK_END);
 	if (ROMSize != 64*1024 && ROMSize != 128*1024 && ROMSize != 256*1024 && ROMSize != 512*1024 && ROMSize != 1024*1024) {
@@ -664,6 +665,8 @@ int main(int argc, char **argv)
 		QuitEmulator();
 	}
 
+	// Load Mac ROM
+        ALOG_DEBUG ("Loaded Mac ROM");
 #if !EMULATED_68K
 	// Get CPU model
 	int mib[2] = {CTL_HW, HW_MODEL};
